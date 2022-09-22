@@ -1,4 +1,11 @@
-import { ADD_NUMBER, SUB_NUMBER, INCREMENT, DECREMENT } from "./constant.js";
+import {
+  ADD_NUMBER,
+  SUB_NUMBER,
+  INCREMENT,
+  DECREMENT,
+  CHANGE_BANNERS,
+  CHANGE_RECOMMENDS,
+} from "./constant.js";
 
 const addAction = (num) => ({
   type: ADD_NUMBER,
@@ -15,4 +22,19 @@ const inAction = () => ({
 const deAction = () => ({
   type: DECREMENT,
 });
-export { addAction, subAction, inAction, deAction };
+
+const changeBannersAction = (banners) => {
+  type: CHANGE_BANNERS, banners;
+};
+
+const changeRecommendsAction = (recommends) => {
+  type: CHANGE_RECOMMENDS, recommends;
+};
+export {
+  addAction,
+  subAction,
+  inAction,
+  deAction,
+  changeBannersAction,
+  changeRecommendsAction,
+};

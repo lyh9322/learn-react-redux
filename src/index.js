@@ -1,7 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM, { render } from "react-dom";
 
 import App from "./App";
+import store from "./store";
+// import { StoreContext } from "./utils/context";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+import { Provider } from "react-redux";
+ReactDOM.render(
+  <div>
+    {/* <StoreContext.Provider value={"store"}>
+      <App />
+    </StoreContext.Provider> */}
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </div>,
+  document.getElementById("root")
+);
