@@ -1,4 +1,4 @@
-import { ADD_NUMBER, SUB_NUMBER } from "./constant.js";
+import { ADD_NUMBER, SUB_NUMBER, INCREMENT, DECREMENT } from "./constant.js";
 
 const addAction = (num) => ({
   type: ADD_NUMBER,
@@ -9,4 +9,10 @@ const subAction = (num) => ({
   num,
 });
 
-export { addAction, subAction };
+const inAction = () => ({
+  type: INCREMENT,
+});
+const deAction = () => ({
+  type: DECREMENT,
+});
+export { addAction, subAction, inAction, deAction };

@@ -18,6 +18,9 @@ export default class Home extends PureComponent {
     });
   }
 
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
   render() {
     return (
       <div>

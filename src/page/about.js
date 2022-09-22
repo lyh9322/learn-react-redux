@@ -17,6 +17,9 @@ export default class About extends PureComponent {
     });
   }
 
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
   render() {
     return (
       <div>
