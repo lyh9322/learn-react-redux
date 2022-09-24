@@ -1,11 +1,14 @@
-import { createStore } from "redux";
-import {
-  addAction,
-  subAction,
-} from "./actionCreators.js";
+import { applyMiddleware, createStore } from "redux";
+import tunkMiddleware from "redux-thunk";
+// import {
+//   addAction,
+//   subAction,
+// } from "./actionCreators.js";
 import reducer from "./reducer.js";
 
-const store = createStore(reducer);
+const enhancer = applyMiddleware(tunkMiddleware);
+
+const store = createStore(reducer, enhancer);
 
 // store.subscribe(() => {
 //   console.log(store.getState().counter);

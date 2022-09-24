@@ -9,8 +9,8 @@ import {
 
 const initialState = {
   counter: 0,
-  banners: {},
-  recommends: {},
+  banner: [],
+  recommend: [],
 };
 
 function reducer(state = initialState, action) {
@@ -24,9 +24,9 @@ function reducer(state = initialState, action) {
     case DECREMENT:
       return { ...state, counter: state.counter - 1 };
     case CHANGE_BANNERS:
-      return { ...state, banners: state.banners };
+      return { ...state, banner: action.banner };
     case CHANGE_RECOMMENDS:
-      return { ...state, recommends: state.recommends };
+      return { ...state, recommend: action.recommend };
     default:
       return state;
   }

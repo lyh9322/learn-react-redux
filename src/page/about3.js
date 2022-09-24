@@ -12,6 +12,12 @@ function About(props) {
       <h2>当前计数{props.counter}</h2>
       <button onClick={(e) => props.increment()}>+1</button>
       <button onClick={(e) => props.addAction(5)}>+5</button>
+      <h1>Recommend</h1>
+      <ul>
+        {props.recommend.map((item, index) => {
+          return <li key={item.acm}>{item.title}</li>;
+        })}
+      </ul>
     </div>
   );
 }
@@ -19,6 +25,8 @@ function About(props) {
 const mapStateToProps = (state) => {
   return {
     counter: state.counter,
+    banner: state.banner,
+    recommend: state.recommend,
   };
 };
 
